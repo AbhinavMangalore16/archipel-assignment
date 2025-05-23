@@ -44,7 +44,7 @@ cd app
 ```bash
 # Windows
 python -m venv venv
-.\venv\Scripts\activate
+./venv/Scripts/activate
 
 # Linux/Mac
 python3 -m venv venv
@@ -67,7 +67,7 @@ The backend server will start running on `http://localhost:5000`
 
 1. Navigate to the frontend directory:
 ```bash
-cd frontend
+cd product-manager
 ```
 
 2. Install the required npm packages:
@@ -103,8 +103,8 @@ The backend provides the following RESTful API endpoints:
 │   ├── models/           # Database models
 │   └── extensions.py     # Flask extensions
 │
-└── frontend/              # Frontend directory
-    ├── src/              # Source files
+└── product-manager/              # Frontend directory
+    ├── app/              # Source files
     ├── public/           # Static files
     └── package.json      # Dependencies
 ```
