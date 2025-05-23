@@ -39,8 +39,13 @@ def get_product(product_id):
 
 @product_bp.route('', methods=['GET'])
 def list_products():
-    products = Product.query.all()
+    search = request.args.get('search', '').strip()
+    query = Product.query
+    if search:
+        query = query.filter(Product.name.ilike(f"%{search}%"))
+    products = query.all()
     return jsonify([dict_product(product) for product in products]), 200
+
 
 @product_bp.route('/<int:product_id>', methods = ['PUT'])
 def update_product(product_id):
